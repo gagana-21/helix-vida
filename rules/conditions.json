@@ -1,0 +1,53 @@
+{
+  "condition": "diabetes",
+  "reviewed_by_clinician": false,
+  "note": "PLACEHOLDER RULES. Role 1 must verify every value against a cited source, then set verified=true and fill in 'source'.",
+  "missed_checkin_days": {
+    "amber": 2,
+    "red": 4,
+    "source": "Team design choice (playbook section 3). Navigator to confirm."
+  },
+  "rules": [
+    {"id": "T1", "type": "threshold", "field": "glucose", "op": "<", "value": 54, "level": "red",
+     "message": "Very low blood glucose (below 54 mg/dL)",
+     "source": "TO VERIFY: ADA Standards of Care, hypoglycaemia levels. Confirm edition and wording.", "verified": false},
+    {"id": "T2", "type": "threshold", "field": "glucose", "op": "<", "value": 70, "level": "amber",
+     "message": "Low blood glucose (below 70 mg/dL)",
+     "source": "TO VERIFY: ADA Standards of Care, hypoglycaemia levels.", "verified": false},
+    {"id": "T3", "type": "threshold", "field": "glucose", "op": ">", "value": 250, "level": "amber",
+     "message": "High blood glucose (above 250 mg/dL)",
+     "source": "TO VERIFY: replace with the limit in the patient's discharge instructions.", "verified": false},
+    {"id": "T4", "type": "threshold", "field": "glucose", "op": ">", "value": 300, "level": "red",
+     "message": "Very high blood glucose (above 300 mg/dL)",
+     "source": "TO VERIFY: replace with the limit in the patient's discharge instructions.", "verified": false},
+
+    {"id": "C1", "type": "choice", "field": "took_medicines", "equals": "Partly", "level": "amber",
+     "message": "Took only some medicines",
+     "source": "Team design choice, not a clinical rule.", "verified": false},
+    {"id": "C2", "type": "choice", "field": "took_medicines", "equals": "No", "level": "amber",
+     "message": "Did not take medicines",
+     "source": "Team design choice, not a clinical rule.", "verified": false},
+
+    {"id": "S1", "type": "symptom", "symptom": "Chest pain or difficulty breathing", "level": "red",
+     "message": "Reported chest pain or difficulty breathing",
+     "source": "TO VERIFY with clinical lead / guideline.", "verified": false},
+    {"id": "S2", "type": "symptom", "symptom": "Confusion, fainting or unusual drowsiness", "level": "red",
+     "message": "Reported confusion, fainting or unusual drowsiness",
+     "source": "TO VERIFY with clinical lead / guideline.", "verified": false},
+    {"id": "S3", "type": "symptom", "symptom": "Vomiting and unable to keep fluids down", "level": "red",
+     "message": "Reported persistent vomiting",
+     "source": "TO VERIFY with clinical lead / guideline.", "verified": false},
+    {"id": "S4", "type": "symptom", "symptom": "Fever or chills", "level": "amber",
+     "message": "Reported fever or chills",
+     "source": "TO VERIFY with clinical lead / guideline.", "verified": false},
+    {"id": "S5", "type": "symptom", "symptom": "Redness, swelling or discharge at a wound", "level": "amber",
+     "message": "Reported wound redness, swelling or discharge",
+     "source": "TO VERIFY with clinical lead / guideline.", "verified": false},
+    {"id": "S6", "type": "symptom", "symptom": "Very thirsty or passing much more urine than usual", "level": "amber",
+     "message": "Reported excessive thirst or urination",
+     "source": "TO VERIFY with clinical lead / guideline.", "verified": false},
+    {"id": "S7", "type": "symptom", "symptom": "Dizziness or shakiness", "level": "amber",
+     "message": "Reported dizziness or shakiness",
+     "source": "TO VERIFY with clinical lead / guideline.", "verified": false}
+  ]
+}

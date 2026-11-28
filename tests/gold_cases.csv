@@ -1,0 +1,13 @@
+case_id,glucose,took_medicines,symptom_ids,expected_status,note
+G01,110,Yes,,green,Normal day
+G02,65,Yes,,amber,Mildly low glucose
+G03,50,Yes,,red,Very low glucose
+G04,280,Yes,,amber,High glucose
+G05,320,Yes,,red,Very high glucose
+G06,110,No,,amber,Skipped medicines
+G07,110,Yes,S1,red,Chest pain
+G08,110,Yes,S5,amber,Wound sign only
+G09,,Yes,,green,Glucose not measured
+G10,110,Partly,S4;S5,amber,Two amber triggers stay amber
+G11,110,Yes,S2,red,Confusion or fainting
+G12,65,No,S3,red,Red symptom overrides ambers
